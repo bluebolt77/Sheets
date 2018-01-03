@@ -1,0 +1,277 @@
+<div class="sheet-container">
+  <!--PERSONAL SECTION-->  
+<div class="sheet-section-personal">
+    
+    <div class="sheet-row"><h2 class="sheet-sectionHeader" style="text-align: center; margin-bottom: 20px;">Character Data</h2></div>
+    
+        <div class='sheet-3colrow'>
+            
+            <div class='sheet-col'>
+                <label>Name</label><input class="sheet-basictext" type="text" name="attr_character_name" />
+                <label>Paradigm</label><input class="sheet-basictext" type="text" name="attr_character_paradigm" />
+            </div>
+            
+            <div class='sheet-col'>
+                <label>Ancestry</label><input class="sheet-basictext" type="text" name="attr_character_ancestry" />
+                <label>Level</label><input class="sheet-basictext" type="text" name="attr_character_level" />
+            </div>
+            
+            <div class='sheet-col'>
+                <label>Background</label><input class="sheet-basictext" type="text" name="attr_character_background" />
+            </div>
+            
+        </div>
+    
+</div>
+
+<!--STATISTICS SECTION-->
+<div class="sheet-section-statistics">
+
+    <div class="sheet-2colrow">
+        
+        <div class="sheet-col">
+            <h2 class="sheet-sectionHeader" style="text-align: center;">Attributes</h2>
+            <table>
+                <tr><th></th><th style="padding: 5px;">SCORE</th><th style="padding: 5px;">MOD</th><th></th></tr>
+                <tr><th style="text-align: left; padding: 10px;">Strength</th>
+                <td><input type="number" name="attr_str" value="10"></td>
+                <td><input type="number" name="attr_strmod" value="0"></td>
+                <td><button type="roll" value="&{template:dlattribute} {{name=STRENGTH}} {{attack=[[1d20+@{strmod}]]}}" name="roll_StrengthCheck"></td>
+                </tr>
+                <tr><th style="text-align: left; padding: 10px;">Dexterity</th>
+                <td><input type="number" name="attr_dex" value="10"></td>
+                <td><input type="number" name="attr_dexmod" value="0"></td>
+                <td><button type="roll" value="&{template:dlattribute} {{name=DEXTERITY}} {{attack=[[1d20+@{dexmod}]]}}" name="roll_DexterityCheck"></td>
+                </tr>
+                <tr><th style="text-align: left; padding: 10px;">Constitution</th>
+                <td><input type="number" name="attr_con" value="10"></td>
+                <td><input type="number" name="attr_conmod" value="0"></td>
+                <td><button type="roll" value="&{template:dlattribute} {{name=Constitution}} {{attack=[[1d20+@{conmod}]]}}" name="roll_ConstitutionCheck"></td>
+                </tr>
+                <tr><th style="text-align: left; padding: 10px;">Intelligence</th>
+                <td><input type="number" name="attr_int" value="10"></td>
+                <td><input type="number" name="attr_intmod" value="0"></td>
+                <td><button type="roll" value="&{template:dlattribute} {{name=Intelligence}} {{attack=[[1d20+@{intmod}]]}}" name="roll_IntelligenceCheck"></td>
+                </tr>
+                <tr><th style="text-align: left; padding: 10px;">Wisdom</th>
+                <td><input type="number" name="attr_wis" value="10"></td>
+                <td><input type="number" name="attr_wismod" value="0"></td>
+                <td><button type="roll" value="&{template:dlattribute} {{name=WISDOM}} {{attack=[[1d20+@{wismod}]]}}" name="roll_WisdomCheck"></td>
+                </tr>
+                <tr><th style="text-align: left; padding: 10px;">Charisma</th>
+                <td><input type="number" name="attr_cha" value="10"></td>
+                <td><input type="number" name="attr_chamod" value="0"></td>
+                <td><button type="roll" value="&{template:dlattribute} {{name=CHARISMA}} {{attack=[[1d20+@{chamod}]]}}" name="roll_CharismaCheck"></td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="sheet-col">
+            <h2 class="sheet-sectionHeader" style="text-align: center;">Statistics</h2>
+            <table>
+                <tr><th style="text-align: left; padding: 10px;">Health Points</th>
+                <td><input type="number" name="attr_health" value="10"></td></tr>
+                <tr><th style="text-align: left; padding: 10px;">Armor Class</th>
+                <td><input type="number" name="attr_armor" value="10"></td></tr>
+                <tr><th style="text-align: left; padding: 10px;">SAVE</th>
+                <td><input type="number" name="attr_save" value="0"></td></tr>
+                <tr><th style="text-align: left; padding: 10px;">Attack</th>
+                <td><input type="number" name="attr_attackbonus" value="0"></td></tr>
+                <tr><th style="text-align: left; padding: 10px;">SP</th>
+                <td><input type="number" name="attr_sp" value="0"></td></tr>
+            </table>
+            <h2 class="sheet-sectionHeader" style="text-align: center;">Attacks</h2>
+            <table>
+                <tr><th>NAME</th><th>ATTR</th><th>MOD</th><th>DAM(ex. 1d8)</th></tr>
+                <tr><td><input type="text" name="attr_weapon1" value="" style="width: 140px;"></td>
+                <td><input type="text" name="attr_weapon1attr" value="" style="width: 50px;"></td>
+                <td><input type="number" name="attr_weapon1mod" value="0"></td>
+                <td><input type="text" name="attr_weapon1dam" value="" style="width: 70px;"></td>
+                <td><button type="roll" value="&{template:dlattack} {{name=@{weapon1}}} {{attack=[[1d20+@{weapon1mod}+@{attackbonus}]]}} {{damage=[[@{weapon1dam}+@{weapon1mod}]]}}" name="roll_Weapon1Check"></td>
+                </tr>
+                <tr><td><input type="text" name="attr_weapon2" value="" style="width: 140px;"></td>
+                <td><input type="text" name="attr_weapon2attr" value="" style="width: 50px;"></td>
+                <td><input type="number" name="attr_weapon2mod" value="0"></td>
+                <td><input type="text" name="attr_weapon2dam" value="" style="width: 70px;"></td>
+                <td><button type="roll" value="&{template:dlattack} {{name=@{weapon2}}} {{attack=[[1d20+@{weapon2mod}+@{attackbonus}]]}} {{damage=[[@{weapon2dam}+@{weapon2mod}]]}}" name="roll_Weapon2Check"></td>
+                </tr>
+            </table>
+        </div>
+        
+    </div>    
+    
+</div>
+
+<!--SKILLS SECTION-->
+<div class="sheet-section-skills" style="padding-top: 10px;">
+    <div class="sheet-3colrow">
+        <h2 class="sheet-sectionHeader" style="text-align: center; margin-top: 20px;">Skills</h2>
+        <div class="sheet-col">
+            
+            <table>
+                <tr><th></th><th style="padding: 5px;">RANK</th><th style="padding: 5px;">MOD</th><th></th></tr>
+                <tr><th style="text-align: left; padding: 10px;">Acrobatics</th>
+                <td><input type="number" name="attr_acrobatics" value="0"></td>
+                <td><input type="number" name="attr_acrobaticsmod" value="0"></td>
+                <td><button type="roll" value="&{template:dlskill} {{name=ACROBATICS (Dex)}} {{attack=[[1d20+@{dexmod}+@{acrobatics}d6kh1+@{acrobaticsmod}]]}}" name="roll_AcrobaticsCheck"></td>
+                </tr>
+                <tr><th style="text-align: left; padding: 10px;">Alchemy</th>
+                <td><input type="number" name="attr_alchemy" value="0"></td>
+                <td><input type="number" name="attr_alchemymod" value="0"></td>
+                <td><button type="roll" value="&{template:dlskill} {{name=ALCHEMY (Int)}} {{attack=[[1d20+@{intmod}+@{alchemy}d6kh1+@{alchemymod}]]}}" name="roll_AlchemyCheck"></td>
+                </tr>
+                <tr><th style="text-align: left; padding: 10px;">Apothecary</th>
+                <td><input type="number" name="attr_apothecary" value="0"></td>
+                <td><input type="number" name="attr_apothecarymod" value="0"></td>
+                <td><button type="roll" value="&{template:dlskill} {{name=APOTHECARY (Wis)}} {{attack=[[1d20+@{wismod}+@{apothecary}d6kh1+@{apothecarymod}]]}}" name="roll_ApothecaryCheck"></td>
+                </tr>
+                <tr><th style="text-align: left; padding: 10px;">Athletics</th>
+                <td><input type="number" name="attr_athletics" value="0"></td>
+                <td><input type="number" name="attr_athleticsmod" value="0"></td>
+                <td><button type="roll" value="&{template:dlskill} {{name=ATHLETICS (Str)}} {{attack=[[1d20+@{strmod}+@{athletics}d6kh1+@{athleticsmod}]]}}" name="roll_AthleticsCheck"></td>
+                </tr>
+                <tr><th style="text-align: left; padding: 10px;">Deception</th>
+                <td><input type="number" name="attr_deception" value="0"></td>
+                <td><input type="number" name="attr_deceptionmod" value="0"></td>
+                <td><button type="roll" value="&{template:dlskill} {{name=DECEPTION (Cha)}} {{attack=[[1d20+@{chamod}+@{deception}d6kh1+@{deceptionmod}]]}}" name="roll_DeceptionCheck"></td>
+                </tr>
+                <tr><th style="text-align: left; padding: 10px;">History</th>
+                <td><input type="number" name="attr_history" value="0"></td>
+                <td><input type="number" name="attr_historymod" value="0"></td>
+                <td><button type="roll" value="&{template:dlskill} {{name=HISTORY (Int)}} {{attack=[[1d20+@{intmod}+@{history}d6kh1+@{historymod}]]}}" name="roll_HistoryCheck"></td>
+                </tr>
+                <tr><th style="text-align: left; padding: 10px;">Intimidate</th>
+                <td><input type="number" name="attr_intimidate" value="0"></td>
+                <td><input type="number" name="attr_intimidatemod" value="0"></td>
+                <td><button type="roll" value="&{template:dlskill} {{name=INTIMIDATE (Cha)}} {{attack=[[1d20+@{chamod}+@{intimidate}d6kh1+@{intimidatemod}]]}}" name="roll_IntimidateCheck"></td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="sheet-col">
+            <table>
+                <tr><th></th><th style="padding: 5px;">RANK</th><th style="padding: 5px;">MOD</th><th></th></tr>
+                <tr><th style="text-align: left; padding: 10px;">Occultism</th>
+                <td><input type="number" name="attr_occultism" value="0"></td>
+                <td><input type="number" name="attr_occultismmod" value="0"></td>
+                <td><button type="roll" value="&{template:dlskill} {{name=OCCULTISM (Int)}} {{attack=[[1d20+@{intmod}+@{occultism}d6kh1+@{occultismmod}]]}}" name="roll_OccultismCheck"></td>
+                </tr>
+                <tr><th style="text-align: left; padding: 10px;">Perception</th>
+                <td><input type="number" name="attr_perception" value="0"></td>
+                <td><input type="number" name="attr_perceptionmod" value="0"></td>
+                <td><button type="roll" value="&{template:dlskill} {{name=PERCEPTION (Wis)}} {{attack=[[1d20+@{wismod}+@{perception}d6kh1+@{perceptionmod}]]}}" name="roll_PerceptionCheck"></td>
+                </tr>
+                <tr><th style="text-align: left; padding: 10px;">Perform</th>
+                <td><input type="number" name="attr_perform" value="0"></td>
+                <td><input type="number" name="attr_performmod" value="0"></td>
+                <td><button type="roll" value="&{template:dlskill} {{name=PERFORM (Cha)}} {{attack=[[1d20+@{chamod}+@{perform}d6kh1+@{performmod}]]}}" name="roll_PerformCheck"></td>
+                </tr>
+                <tr><th style="text-align: left; padding: 10px;">Persuasion</th>
+                <td><input type="number" name="attr_persuasion" value="0"></td>
+                <td><input type="number" name="attr_persuasionmod" value="0"></td>
+                <td><button type="roll" value="&{template:dlskill} {{name=PERSUASION (Cha)}} {{attack=[[1d20+@{chamod}+@{persuasion}d6kh1+@{persuasionmod}]]}}" name="roll_PersuasionCheck"></td>
+                </tr>
+                <tr><th style="text-align: left; padding: 10px;">Sense Motive</th>
+                <td><input type="number" name="attr_sensemotive" value="0"></td>
+                <td><input type="number" name="attr_sensemotivemod" value="0"></td>
+                <td><button type="roll" value="&{template:dlskill} {{name=SENSE MOTIVE (Wis)}} {{attack=[[1d20+@{wismod}+@{sensemotive}d6kh1+@{sensemotivemod}]]}}" name="roll_SenseMotiveCheck"></td>
+                </tr>
+                <tr><th style="text-align: left; padding: 10px;">Sleight of Hand</th>
+                <td><input type="number" name="attr_sleightofhand" value="0"></td>
+                <td><input type="number" name="attr_sleightofhandmod" value="0"></td>
+                <td><button type="roll" value="&{template:dlskill} {{name=SLEIGHT OF HAND (Dex)}} {{attack=[[1d20+@{dexmod}+@{sleightofhand}d6kh1+@{sleightofhandmod}]]}}" name="roll_SleightOfHandCheck"></td>
+                </tr>
+                <tr><th style="text-align: left; padding: 10px;">Spelunking</th>
+                <td><input type="number" name="attr_spelunking" value="0"></td>
+                <td><input type="number" name="attr_spelunkingmod" value="0"></td>
+                <td><button type="roll" value="&{template:dlskill} {{name=SPELUNKING (Wis)}} {{attack=[[1d20+@{wismod}+@{spelunking}d6kh1+@{spelunkingmod}]]}}" name="roll_SpelunkingCheck"></td>
+                </tr>
+            </table>
+            
+        </div>
+        
+        <div class="sheet-col">
+            <table>
+                <tr><th></th><th style="padding: 5px;">RANK</th><th style="padding: 5px;">MOD</th><th></th></tr>
+                <tr><th style="text-align: left; padding: 10px;">Stealth</th>
+                <td><input type="number" name="attr_stealth" value="0"></td>
+                <td><input type="number" name="attr_stealthmod" value="0"></td>
+                <td><button type="roll" value="&{template:dlskill} {{name=STEALTH (Dex)}} {{attack=[[1d20+@{dexmod}+@{stealth}d6kh1+@{stealthmod}]]}}" name="roll_StealthCheck"></td>
+                </tr>
+                <tr><th style="text-align: left; padding: 10px;">Streetwise</th>
+                <td><input type="number" name="attr_streetwise" value="0"></td>
+                <td><input type="number" name="attr_streetwisemod" value="0"></td>
+                <td><button type="roll" value="&{template:dlskill} {{name=STREETWISE (Cha)}} {{attack=[[1d20+@{chamod}+@{streetwise}d6kh1+@{streetwisemod}]]}}" name="roll_StreetwiseCheck"></td>
+                </tr>
+                <tr><th style="text-align: left; padding: 10px;">Survival</th>
+                <td><input type="number" name="attr_survival" value="0"></td>
+                <td><input type="number" name="attr_survivalmod" value="0"></td>
+                <td><button type="roll" value="&{template:dlskill} {{name=SURVIVAL (Wis)}} {{attack=[[1d20+@{wismod}+@{survival}d6kh1+@{survivalmod}]]}}" name="roll_SurvivalCheck"></td>
+                </tr>
+                <tr><th style="text-align: left; padding: 10px;">Tinkering</th>
+                <td><input type="number" name="attr_tinkering" value="0"></td>
+                <td><input type="number" name="attr_tinkeringmod" value="0"></td>
+                <td><button type="roll" value="&{template:dlskill} {{name=TINKERING (Int)}} {{attack=[[1d20+@{intmod}+@{tinkering}d6kh1+@{tinkeringmod}]]}}" name="roll_TinkeringCheck"></td>
+                </tr>
+                <tr><th style="text-align: left; padding: 10px;">Watercraft</th>
+                <td><input type="number" name="attr_watercraft" value="0"></td>
+                <td><input type="number" name="attr_watercraftmod" value="0"></td>
+                <td><button type="roll" value="&{template:dlskill} {{name=WATERCRAFT (Wis)}} {{attack=[[1d20+@{wismod}+@{watercraft}d6kh1+@{watercraftmod}]]}}" name="roll_WatercraftCheck"></td>
+                </tr>
+            </table>
+            
+        </div>
+        
+    </div>
+   
+</div>
+
+<!--TRAITS SECTION-->
+<div class="sheet-section-traits" style="padding-top: 10px;">
+        <div class="sheet-row">
+            <h2 class="sheet-sectionHeader" style="text-align: center;">Traits</h2>
+            <textarea class="sheet-trait-text" name="attr_traits"></textarea>
+            
+        </div>
+        
+</div>
+
+<!--EQUIPMENT SECTION-->
+<div class="sheet-section-equipment" style="padding-top: 10px;">
+        <div class="sheet-row">
+            <h2 class="sheet-sectionHeader" style="text-align: center;">Equipment</h2>
+            <textarea class="sheet-equipment-text" name="attr_equipment"></textarea>
+            
+        </div>
+        
+</div>
+
+</div> <!-- dont put anything outside of this, end of skeleton container -->
+
+<rolltemplate class="sheet-rolltemplate-dlattribute">
+    <table>
+		<tr><th>{{name}}</th></tr>
+		<tr><td>{{attack}}</td></tr>
+		<tr><td>vs</td></tr>
+		<tr><td>CR</td></tr>
+    </table>
+</rolltemplate>
+
+<rolltemplate class="sheet-rolltemplate-dlskill">
+    <table>
+		<tr><th>{{name}}</th></tr>
+		<tr><td>{{attack}}</td></tr>
+		<tr><td>vs</td></tr>
+		<tr><td>CR</td></tr>
+    </table>
+</rolltemplate>
+
+<rolltemplate class="sheet-rolltemplate-dlattack">
+    <table>
+		<tr><th>{{name}}</th></tr>
+		<tr><td>{{attack}}</td></tr>
+		<tr><td>vs</td></tr>
+		<tr><td>AC</td></tr>
+		<tr><td>{{damage}} DMG</td></tr>
+    </table>
+</rolltemplate>

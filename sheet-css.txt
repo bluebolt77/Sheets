@@ -1,0 +1,113 @@
+.sheet-section-statisticsoff th {
+    text-align: center; 
+	color: white; 
+    background-color: black;
+    
+}
+
+.sheet-section-statistics {
+    text-align: center;
+}
+
+.sheet-section-skills {
+    text-align: center;
+}
+
+.sheet-section-skillsoff th {
+    text-align: center; 
+	color: white; 
+    background-color: black;
+}
+
+.sheet-section-skills td {
+    padding-right: 2px;
+    padding-left: 2px;
+}
+
+.sheet-basictext {
+    margin-bottom: 20px;
+    background-color: transparent;
+    border-style: solid;
+    border-width: 0px 0px 1px 0px;
+    border-color: black;
+    box-shadow: none;
+}
+
+.sheet-basictext:focus {
+    outline:none;
+    box-shadow: none;
+}
+
+h2.sheet-sectionHeader {
+    text-align: center; 
+	color: white; 
+    background-color: black;
+    font-family: "candal";
+}
+
+/* Attribute roll table styling */
+.sheet-rolltemplate-dlattribute table {
+    width: 189px;
+    border: solid 2px;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.sheet-rolltemplate-dlattribute tr {
+    padding: 4px;
+}
+
+.sheet-rolltemplate-dlattribute th {
+    text-align: center; 
+	color: white; 
+    background-color: black;
+}
+
+.sheet-rolltemplate-dlattribute td {
+    padding: 4px;
+    font-style: bold;
+}
+
+.sheet-rolltemplate-dlskill table {
+    width: 189px;
+    border: solid 2px;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.sheet-rolltemplate-dlskill tr {
+    padding: 4px;
+}
+
+.sheet-rolltemplate-dlskill th {
+    text-align: center; 
+	color: white; 
+    background-color: green;
+}
+
+.sheet-rolltemplate-dlskill td {
+    padding: 4px;
+    font-style: bold;
+}
+
+.sheet-rolltemplate-dlattack table {
+    width: 189px;
+    border: solid 2px;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.sheet-rolltemplate-dlattack tr {
+    padding: 4px;
+}
+
+.sheet-rolltemplate-dlattack th {
+    text-align: center; 
+	color: white; 
+    background-color: orange;
+}
+
+.sheet-rolltemplate-dlattack td {
+    padding: 4px;
+    font-style: bold;
+}
